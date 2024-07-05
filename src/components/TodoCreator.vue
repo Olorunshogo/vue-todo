@@ -51,16 +51,18 @@
         }
 
         &focus-within {
-            box-shadow: 0 -4px 6px -1px rgb(0 0 0 / 0.1),
-                0 -2px 4px -2px rgb(0 0 0 / 0.1);
+            box-shadow: 0 -4px 6px -1px rgb(0 0 0 / 0.5),
+                0 -2px 4px -2px rgb(0 0 0 / 0.5);
         }
 
-        input {
+        input[type=text] {
             width: 100%;
             padding: 8px 6px;
             border: none;
+            transition: all 0.5s ease-out;
             &:focus {
                 outline: none;
+                background-color: #ddd;
             }
         }
     }

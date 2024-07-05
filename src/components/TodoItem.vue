@@ -19,7 +19,9 @@
 <template>
     <div>        
         <li>
-            <input type="checkbox" v-bind:checked="todo.isCompleted" @input="$emit('toggleComplete', index)">
+            <input type="checkbox" 
+                v-bind:checked="todo.isCompleted" 
+                @input="$emit('toggleComplete', index)">
             <div class="todo">
                 <input 
                     v-if="todo.isEditing" type="text" 
@@ -31,16 +33,21 @@
                 </span>
             </div>
             <div class="todo-actions">
+                <!-- === Check Icon === -->
                 <Icon 
                     icon="ph:check-circle" class="icon"  
                     style="color: #41B080" width="22" 
+                    v-if="todo.isEditing"
                     @click="$emit('edit-todo', index)"
                 />
+                <!-- === Pencil Icon === -->
                 <Icon 
                     icon="ph:pencil-fill" class="icon"  
-                    style="color: #41B080" width="22" 
+                    style="color: #41B080" width="22"
+                    v-else 
                     @click="$emit('edit-todo', index)" 
                 />
+                <!-- === Trash Icon === -->
                 <Icon 
                     icon="ph:trash" class="icon"  
                     style="color: #F95E5E" width="22" 
@@ -93,6 +100,8 @@
                 width: 100%;
                 padding: 2px 6px;
                 border: 2px solid #41B080;
+                font-size: 16px;
+                font-weight: 400;
             }
         }
 

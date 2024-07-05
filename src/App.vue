@@ -1,6 +1,7 @@
 <script setup>
   import { RouterView } from 'vue-router'
   import TodoHeader from './components/TodoHeader.vue'
+  import TodosView from './views/TodosView.vue';
 </script>
 
 <template>
@@ -8,9 +9,9 @@
   
 
   <RouterView />
+  <TodosView></TodosView>
 </template>
 
 <style lang="scss">
-
 
 </style>

@@ -17,8 +17,8 @@ import { RouterLink } from 'vue-router';
                     <h1>Vue Todos</h1>
                 </div>
                 <ul class="nav-routes">
-                    <RouterLink to="/">Todos</RouterLink>
-                    <RouterLink to="/about">About</RouterLink>
+                    <RouterLink class="routerLink" to="/">Todos</RouterLink>
+                    <RouterLink class="routerLink" to="/about">About</RouterLink>
                 </ul>
             </nav>
         </header>
@@ -67,4 +67,15 @@ import { RouterLink } from 'vue-router';
             }
         }
     }
+
+    .routerLink {
+        transition: all 0.1s ease-in-out;
+        &:hover {
+            text-decoration: underline;
+            font-weight: bold;
+        }
+    }
 </style>
+    
+
+    
