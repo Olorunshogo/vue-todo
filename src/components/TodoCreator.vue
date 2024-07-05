@@ -28,8 +28,8 @@
 
 <template>
     <div class="input-wrapper" v-bind:class="{ 'input-err': todoState.invalid }">
-        <input type="text" name="text" value="" v-model="todoState.todo" >
-        <TodoButton v-on:click="createTodo()"></TodoButton>
+        <input type="text" name="text" v-model="todoState.todo" autofocus>
+        <TodoButton v-on:click="createTodo($event)"></TodoButton>
     </div>
     <!-- Create and destroy each time it is invalid and valid respectively -->
     <!-- <p v-if="todoState.invalid" class="error-msg">{{ todoState.errorMsg }}</p> -->
@@ -43,6 +43,8 @@
         flex-direction: row;
         transition: 250ms ease;
         border: 2px solid #41b080;
+        width: 90%;
+        margin: 0 auto;
 
         &.input-err {
             border: 1px solid red;
